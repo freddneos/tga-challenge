@@ -2,13 +2,13 @@ export interface IScheduleItem {
     id: Number
     url: String
     name: String
-    season: String
-    number: String
+    season: Number
+    number: Number
     type: String
     airdate: String
     airtime: String
     airstamp: String
-    runtime: String
+    runtime: Number
     image?: String
     summary?: String
     show: IRemoteShow
@@ -40,7 +40,7 @@ export interface IRemoteShow {
     average?: Number
   }
   weight: Number
-  network: Number
+  network?: any
   webChannel: {
     id: Number
     name: String

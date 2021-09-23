@@ -1,5 +1,4 @@
 export default interface IEpisodeResponse {
-
   id: Number
   url: String
   name: String

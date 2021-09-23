@@ -1,9 +1,9 @@
 import React from 'react'
 import { GetServerSideProps } from 'next';
-import Image from 'next/image'
 import axios from 'axios';
 import IScheduleResponse from '../interfaces/remote/IScheduleResponse';
 import ShowsList from '../components/ShowsList';
+import { API_URL } from '../../config';
 
 interface IPageProps{
   data?: IScheduleResponse,
@@ -28,7 +28,7 @@ const Home: React.FC<IPageProps> = ({
 export const getServerSideProps: GetServerSideProps<IPageProps> = async () => {
   try {
     const { data } = await axios.get<IScheduleResponse>(
-      'https://api.tvmaze.com/schedule?country=US&date=2021-08-23'
+      API_URL
     );
     if (!data) {
       return {
