@@ -17,7 +17,7 @@ export const HeaderContainer = styled.div`
   p{
     margin-top: 20px;
   }
-   @media only screen and ${breakpoint.device.xs}{
+   @media only screen and ${breakpoint.device.sm}{
     h1 {
       font-size: 26px;
       font-weight: 600;
