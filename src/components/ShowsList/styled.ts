@@ -10,6 +10,7 @@ export const ListContainer = styled.section`
   @media only screen and ${breakpoint.device.sm}{
    justify-content: center;
   }
+
 `
 
 export const SectionContainer = styled.div`
@@ -18,6 +19,15 @@ export const SectionContainer = styled.div`
   h2{
     margin-bottom: 20px;
     color: ${props => props.theme.colors.text}
+  }
+  button{
+    background-color: transparent;
+    border:none;
+    color:white;
+    font-size: 20px;
+    padding: 10px;
+   cursor: pointer;
+
   }
   @media only screen and ${breakpoint.device.sm}{
     padding-left:10px;
