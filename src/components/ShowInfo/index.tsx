@@ -12,7 +12,7 @@ const ShowInfo: React.FC<IShowInfoProps> = ({ data }: IShowInfoProps) => {
       <S.ShowInfoContainer>
         <h2>Show Info</h2>
         <ul>
-          <li><b>Streamed on</b> {data.network.name || 'Not avaiable' } </li>
+          <li><b>Streamed on</b> {data.network?.name || 'Not avaiable' } </li>
           <li><b>Schedule</b> {data.schedule.days.length > 0 ?data.schedule.days.map(item=>`${item}, `) : 'Not avaiable'}</li>
           <li><b>Status</b> {data.status || 'Not avaiable' }</li>
           <li><b>Genres</b> {data.genres.length > 0 ? data.genres.map(item=>`${item}, `) : 'Not avaiable'}</li>

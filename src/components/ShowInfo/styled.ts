@@ -78,6 +78,16 @@ export const ShowInfoContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding-left: 50px;
+  ::-webkit-scrollbar
+    {
+        width: 0px;
+    }
+    ::-webkit-scrollbar-track-piece
+    {
+        background-color: transparent;
+        -webkit-border-radius: 6px;
+    }
+
   @media only screen and ${breakpoint.device.sm}{
       padding-left: 0px;
       width: 100%;
