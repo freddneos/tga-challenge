@@ -15,7 +15,7 @@ const Hero: React.FC<IHeroProps> = ({ data }: IHeroProps) => {
       <S.CardContainer>
         <S.ImageContainer
           src={image.original as string}
-          height={300} width={250}
+          height={350} width={250}
           placeholder="blur"
           blurDataURL={"https://via.placeholder.com/280x250"}
         />

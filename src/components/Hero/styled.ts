@@ -5,12 +5,12 @@ import breakpoint from '../../styles/breakpoints'
 export const HeroContainer = styled.div`
   display:flex;
   justify-content: center;
-  max-height: 300px;
-  margin-top: -300px;
-  @media only screen and ${breakpoint.device.xs}{
-        margin-top: -250px;
+  max-height: 500px;
+  @media only screen and ${breakpoint.device.sm}{
+        max-height: initial;
         align-items: center;
-        flex-direction: column;;
+        flex-direction: column;
+        min-height: 400px;
     }
 `;
 
@@ -18,7 +18,7 @@ export const CardContainer = styled.div`
   display: block;
   min-height: 350px;
   min-width: 200px;
-  @media only screen and ${breakpoint.device.xs}{
+  @media only screen and ${breakpoint.device.sm}{
     display: flex;
     justify-content: center;
     padding-top : 50px ;
@@ -48,9 +48,8 @@ export const InfoContainer = styled.div`
     }
   }
 
-  @media only screen and ${breakpoint.device.xs}{
+  @media only screen and ${breakpoint.device.sm}{
       width: 100%;
-      display: block;
       padding-left: 20px;
       padding-right: 20px;
       h3{
@@ -63,16 +62,15 @@ export const InfoContainer = styled.div`
 export const StarsContainer = styled.div`
 display: flex;
 flex-direction: row;
-justify-content: center;
+justify-content: flex-start;
 align-items: center;
 b{
   padding-left: 10px;
 }
-@media only screen and ${breakpoint.device.xs}{
-  b{
-    display:none
-  }
+@media only screen and ${breakpoint.device.sm}{
   padding-bottom: 10px;
+  padding-top: 20px;
+  justify-content: center;
 }
 `
 
