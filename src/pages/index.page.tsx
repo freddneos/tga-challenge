@@ -1,15 +1,24 @@
 import React from 'react'
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
+import styled from 'styled-components';
 import IScheduleResponse from '../interfaces/remote/IScheduleResponse';
 import ShowsList from '../components/ShowsList';
 import { API_URL } from '../../config';
 import Header from '../components/Header';
-
+import breakpoint from '../styles/breakpoints'
 interface IPageProps{
   data?: IScheduleResponse,
   notFound?: Boolean,
 }
+
+const Container = styled.section`
+  position: absolute;
+  top: 300px;
+  @media only screen and ${breakpoint.device.sm}{
+    top: 150px;
+  }
+`
 const Home: React.FC<IPageProps> = ({
   data,
   notFound,
@@ -21,7 +30,9 @@ const Home: React.FC<IPageProps> = ({
         <p>TV Shows and web series database.</p>
       </Header>
       <main>
-        {!notFound ? <ShowsList data={data}/> : <div>Something went wrong, please try again</div>}
+        <Container>
+          {!notFound ? <ShowsList data={data}/> : <div>Something went wrong, please try again</div>}
+        </Container>
       </main>
     </div>
   )

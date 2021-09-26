@@ -6,11 +6,24 @@ import IEpisodeResponse from '../../interfaces/remote/IEpisodeResponse';
 import Hero from '../../components/Hero';
 import { GetServerSideProps } from 'next';
 import ShowInfo from '../../components/ShowInfo';
-
+import styled from 'styled-components';
+import breakpoint from '../../styles/breakpoints'
 interface IPageProps{
   data?: IEpisodeResponse,
   notFound?: Boolean,
 }
+
+
+const Container = styled.section`
+  position: absolute;
+  top: 200px;
+  left: 15%;
+  @media only screen and ${breakpoint.device.sm}{
+    top: 100px;
+    left: 0;
+
+  }
+`
 const Episode: React.FC<IPageProps> = ({notFound , data}:IPageProps) => {
   return (
     <div>
@@ -19,10 +32,10 @@ const Episode: React.FC<IPageProps> = ({notFound , data}:IPageProps) => {
       </Header>
       <main>
         {!notFound && (
-          <>
+          <Container>
             <Hero data={data} />
             <ShowInfo data={data}/>
-          </>
+          </Container>
         )}
       </main>
     </div>
