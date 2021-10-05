@@ -20,8 +20,8 @@ yarn dev
 - [X] Next.js
 
 ### Taking things further
-- [] The use of a build tool
-- [] Responsive images
-- [] Tests (Unit and/or end-to-end)
+- [ ] The use of a build tool
+- [ ] Responsive images
+- [ ] Tests (Unit and/or end-to-end)
 - [X] Pagination
 - [X] With (SSR) and Image Pre load - Performance optimisation
