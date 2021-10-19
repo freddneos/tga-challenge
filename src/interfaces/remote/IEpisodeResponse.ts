@@ -1,13 +1,13 @@
 export default interface IEpisodeResponse {
-  id: Number
+  id: number
   url: String
   name: String
   type: String
   language: String
   genres: String[]
   status: String
-  runtime: Number
-  averageRuntime: Number
+  runtime: number
+  averageRuntime: number
   premiered: String
   ended: String
   officialSite: String
@@ -18,9 +18,9 @@ export default interface IEpisodeResponse {
   rating: {
     average?: String
   }
-  weight: Number
+  weight: number
   network: {
-    id: Number
+    id: number
     name: String
     country: {
       name: String
@@ -31,8 +31,8 @@ export default interface IEpisodeResponse {
   webChannel?: String
   dvdCountry?: String
   externals: {
-    tvrage: Number
-    thetvdb: Number
+    tvrage: number
+    thetvdb: number
     imdb: String
   }
   image: {
@@ -40,7 +40,7 @@ export default interface IEpisodeResponse {
     original: String
   }
   summary:String
-  updated: Number
+  updated: number
   _embedded: {
     cast: IShowCast[]
   }
@@ -58,7 +58,7 @@ export default interface IEpisodeResponse {
 
 export interface IShowCast {
   person: {
-    id: Number
+    id: number
     url:String
     name: String
     country: {
@@ -73,7 +73,7 @@ export interface IShowCast {
       medium: String
       original: String
     } | null
-    updated: Number
+    updated: number
     _links: {
       self: {
         href: String
@@ -81,7 +81,7 @@ export interface IShowCast {
     }
   }
   character: {
-    id: Number
+    id: number
     url:String
     name: String
     image: {

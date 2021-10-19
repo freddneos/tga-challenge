@@ -1,14 +1,14 @@
 export interface IScheduleItem {
-    id: Number
+    id: number
     url: String
     name: String
-    season: Number
-    number: Number
+    season: number
+    number: number
     type: String
     airdate: String
     airtime: String
     airstamp: String
-    runtime: Number
+    runtime: number
     image?: String
     summary?: String
     show: IRemoteShow
@@ -20,15 +20,15 @@ export interface IScheduleItem {
 }
 
 export interface IRemoteShow {
-  id: Number
+  id: number
   url: String
   name: String
   type: String
   language: String
   genres: String[]
   status: String
-  runtime: Number
-  averageRuntime: Number
+  runtime: number
+  averageRuntime: number
   premiered: String
   ended: String
   officialSite: String
@@ -37,12 +37,12 @@ export interface IRemoteShow {
     days: String[]
   }
   rating: {
-    average?: Number
+    average?: number
   }
-  weight: Number
+  weight: number
   network?: any
   webChannel: {
-    id: Number
+    id: number
     name: String
     country: {
       name: String
@@ -53,7 +53,7 @@ export interface IRemoteShow {
   dvdCountry?: String
   externals: {
     tvrage?: String
-    thetvdb?: Number
+    thetvdb?: number
     imdb?: String
   }
   image: {
@@ -61,7 +61,7 @@ export interface IRemoteShow {
     original: String
   }
   summary: String
-  updated: Number
+  updated: number
   _links: {
     self: {
       href: String

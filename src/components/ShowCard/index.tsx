@@ -13,7 +13,7 @@ const ShowCard: React.FC<IShowCardProps> = ({ data }: IShowCardProps) => {
   return (
     <S.CardContainer key={id as number}>
       <Link href={`show/${show.id}`}>
-        <S.ImageContainer src={show.image.medium as string} width={150} height={250} placeholder="blur" blurDataURL={"https://via.placeholder.com/150x250"} />
+        <S.ImageContainer src={show.image?.medium as string} width={150} height={250} placeholder="blur" blurDataURL={"https://via.placeholder.com/150x250"} />
        </Link>
         <S.InfoContainer>
         <ReactStars

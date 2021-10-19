@@ -4,10 +4,12 @@ import { API_URL } from '../../../config';
 import Header from '../../components/Header';
 import IEpisodeResponse from '../../interfaces/remote/IEpisodeResponse';
 import Hero from '../../components/Hero';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetStaticPaths, GetStaticPathsResult, GetStaticProps } from 'next';
 import ShowInfo from '../../components/ShowInfo';
 import styled from 'styled-components';
 import breakpoint from '../../styles/breakpoints'
+import IScheduleResponse from '../../interfaces/remote/IScheduleResponse';
+import { format } from 'date-fns';
 interface IPageProps{
   data?: IEpisodeResponse,
   notFound?: Boolean,
@@ -42,7 +44,20 @@ const Episode: React.FC<IPageProps> = ({notFound , data}:IPageProps) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps<IPageProps> = async (context) => {
+export const getStaticPaths = async () => {
+  const apiDate = format(new Date(),"yyyy-MM-dd")
+  const { data } = await axios.get<IScheduleResponse>(
+      `${API_URL}schedule?country=US&date=${apiDate}`
+  );
+  const paths = data.map(path => {return {params:{id:path.id.toString()}}})
+
+  return {
+    paths,
+    fallback: true
+  }
+}
+
+export const getStaticProps: GetStaticProps<IPageProps> = async (context) => {
   const {params} = context
   try {
     const { data } = await axios.get<IEpisodeResponse>(
@@ -59,6 +74,7 @@ export const getServerSideProps: GetServerSideProps<IPageProps> = async (context
   } catch (error) {
     return {
       props: { notFound: true },
+      revalidate:30
     };
   }
 };

@@ -1,5 +1,5 @@
 import React from 'react'
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetStaticProps } from 'next';
 import axios from 'axios';
 import styled from 'styled-components';
 import IScheduleResponse from '../interfaces/remote/IScheduleResponse';
@@ -84,7 +84,7 @@ const Home: React.FC<IPageProps> = ({
   )
 }
 
-export const getServerSideProps: GetServerSideProps<IPageProps> = async () => {
+export const getStaticProps: GetStaticProps<IPageProps> = async () => {
   const apiDate = format(new Date(),"yyyy-MM-dd")
   try {
     const { data } = await axios.get<IScheduleResponse>(
@@ -101,6 +101,7 @@ export const getServerSideProps: GetServerSideProps<IPageProps> = async () => {
   } catch (error) {
     return {
       props: { notFound: true },
+      revalidate:10000
     };
   }
 };

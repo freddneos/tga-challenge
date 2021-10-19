@@ -5,7 +5,7 @@ export const HeaderContainer = styled.div`
   background: ${props => props.theme.colors.primary};
   background: linear-gradient(3deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(130,87,230,1) 100%);
   padding: ${props => props.theme.padding.simple};
-  height: ${props=>props.size || '500px'};
+  height: ${'500px'};
   color: ${props => props.theme.colors.text};
 
   h1 {
